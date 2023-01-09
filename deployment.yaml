@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: flaskdemo
-        image: khimnguynn/flaskapp
+        image: khimnguynn/flaskapp:latest
         resources:
           limits:
             memory: "128Mi"

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: khimnguynn/flaskapp:24
+        image: khimnguynn/flaskapp:25
         resources:
           limits:
             memory: "128Mi"

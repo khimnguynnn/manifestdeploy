@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskdemo
+spec:
+  selector:
+    matchLabels:
+      app: flaskdemo
+  template:
+    metadata:
+      labels:
+        app: flaskdemo
+    spec:
+      containers:
+      - name: flaskdemo
+        image: khimnguynn/flaskapp
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000

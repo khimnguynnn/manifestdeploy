@@ -16,7 +16,9 @@ spec:
       - name: flask-container
         image: khimnguynn/flaskapp:latest
         resources:
-          limits: {}
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 5000
 ---

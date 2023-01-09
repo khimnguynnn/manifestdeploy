@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: flaskdemo
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: flaskdemo
@@ -20,3 +21,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: flaskdemo
+  ports:
+  - port: 5000
+    targetPort: 5000
